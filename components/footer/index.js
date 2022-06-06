@@ -1,5 +1,11 @@
+import FooterTop from "../footer-top";
+
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div>
+      <FooterTop />
+    </div>
+  );
 };
 
 export default Footer;
