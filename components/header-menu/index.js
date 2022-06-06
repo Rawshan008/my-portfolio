@@ -1,6 +1,6 @@
 import MenuClose from "../menu-icon/menuClose";
 
-const HeaderMenu = ({ menuClose }) => {
+const HeaderMenu = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-black text-white flex justify-center">
       <div className="w-96 h-96 bg-base-color relative">
