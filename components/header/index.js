@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { useState } from "react";
+import Home from "../../public/icons/home.svg";
+import About from "../../public/icons/about.svg";
+import Portfolio from "../../public/icons/portfolio.svg";
+import Contact from "../../public/icons/contact.svg";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,29 +61,53 @@ const Header = () => {
                 <ul className="flex flex-wrap justify-center items-center text-center">
                   <li className="w-1/2 inline-block transition-all duration-700 hover:bg-base-hover">
                     <Link href="/">
-                      <a className="block p-16 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-r border-menu-border">
-                        Home
+                      <a className="block p-12 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-r border-menu-border flex items-center justify-center flex-col">
+                        <Home
+                          height="30"
+                          width="30"
+                          fill="#ffffff"
+                          className="mb-1"
+                        />
+                        <span>Home</span>
                       </a>
                     </Link>
                   </li>
                   <li className="w-1/2 inline-block transition-all duration-700 hover:bg-base-hover">
                     <Link href="/about">
-                      <a className="block p-16 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-menu-border">
-                        About
+                      <a className="block p-12 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-menu-border flex items-center justify-center flex-col">
+                        <About
+                          height="30"
+                          width="30"
+                          fill="#ffffff"
+                          className="mb-1"
+                        />
+                        <span>About</span>
                       </a>
                     </Link>
                   </li>
                   <li className="w-1/2 inline-block transition-all duration-700 hover:bg-base-hover">
                     <Link href="/portfolio">
-                      <a className="block p-16 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-r border-menu-border">
-                        portfolio
+                      <a className="block p-12 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-r border-menu-border flex items-center justify-center flex-col">
+                        <Portfolio
+                          height="30"
+                          width="30"
+                          fill="#ffffff"
+                          className="mb-1"
+                        />
+                        <span>Portfolio</span>
                       </a>
                     </Link>
                   </li>
                   <li className="w-1/2 inline-block transition-all duration-700 hover:bg-base-hover">
                     <Link href="/contact">
-                      <a className="block p-16 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-menu-border">
-                        Contact
+                      <a className="block p-12 font-dosis font-bold text-white text-xl uppercase letter tracking-widest border-b border-menu-border flex items-center justify-center flex-col">
+                        <Contact
+                          height="30"
+                          width="30"
+                          fill="#ffffff"
+                          className="mb-1"
+                        />
+                        <span>Contact</span>
                       </a>
                     </Link>
                   </li>
