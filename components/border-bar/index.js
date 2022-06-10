@@ -1,5 +1,6 @@
-const BorderBar = () => {
-  return <div className={"block bg-base-color h-4 rounded-md"}></div>;
+const BorderBar = (props) => {
+  const { height } = props;
+  return <div className={`block bg-base-color rounded-md h-${height}`}></div>;
 };
 
 export default BorderBar;

@@ -4,17 +4,22 @@ import Home from "../../public/icons/home.svg";
 import About from "../../public/icons/about.svg";
 import Portfolio from "../../public/icons/portfolio.svg";
 import Contact from "../../public/icons/contact.svg";
+import Logo from "../../public/icons/logo.svg";
+import LogoMenu from "../../public/icons/logoMenu.svg";
+import BorderBar from "../border-bar";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gray-300">
-      <div className="container mx-auto">
+    <div className="">
+      <div className="mx-auto py-4">
         <div className="flex items-center justify-around">
           <div className="w-1/4">
             <Link href="/">
-              <a>Logo</a>
+              <a>
+                <Logo />
+              </a>
             </Link>
           </div>
           <div className="w-3/4 text-right">
@@ -41,7 +46,13 @@ const Header = () => {
               }
             >
               <div className="flex justify-between items-center p-5 border-b-2 border-menu-border">
-                <div className="logo">Logo</div>
+                <div className="logo">
+                  <Link href="/">
+                    <a>
+                      <LogoMenu />
+                    </a>
+                  </Link>
+                </div>
                 <div
                   className="cursor-pointer"
                   onClick={() => setMenuOpen(false)}
@@ -119,6 +130,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <BorderBar height="2" />
     </div>
   );
 };

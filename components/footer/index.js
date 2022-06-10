@@ -5,7 +5,7 @@ import FooterTop from "../footer-top";
 const Footer = () => {
   return (
     <div>
-      <BorderBar />
+      <BorderBar height="4" />
       <FooterTop />
       <FooterBottom />
     </div>
