@@ -25,3 +25,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .home-description > p {
+    @apply font-normal font-bitter text-xl text-body-color tracking-wide leading-8;
+  }
+}

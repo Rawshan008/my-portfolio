@@ -15,9 +15,10 @@ const HomeBanner = (props) => {
       )}
 
       {description && (
-        <p className="font-normal font-bitter text-xl text-body-color tracking-wide leading-8">
-          {description}
-        </p>
+        <div
+          className="home-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
       )}
     </div>
   );

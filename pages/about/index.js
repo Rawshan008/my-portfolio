@@ -2,56 +2,67 @@ import HomeBanner from "../../components/home-barner";
 import Layout from "../../components/layout";
 import SiteTitle from "../../components/site-title";
 import Skills from "../../components/skills";
+import { gql } from "@apollo/client";
+import client from "../api/apollo-client";
+import Head from "next/head";
 
-const About = () => {
+const About = ({ aboutPage }) => {
+  const { title, content, about } = aboutPage;
+
   return (
     <Layout>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <HomeBanner
         title=""
-        subtitle="Hi,"
-        description="If you are wandering i'm the character of a English Movie. I am not I am a real person with name Md. Rawshan Ali. I am a WordPress Theme and plugin developer and React Front-end Developer. I build ton of website for portfolio, Enterprice, agency, and Woocommerce level. I am also work as a backend and Frontend develoer for Headless wordpress Website. I using git for all code version control with modern system. My personal interests are Traveling, Natural Photography, and watching movies. if you want to know about my knowledge please click all of my portfolio links. Thanks"
+        subtitle={about.aboutHeading}
+        description={content}
       />
 
       <div className="flex flex-wrap mb-10">
-        <div className="w-1/2">
-          <SiteTitle title="FrontEnd" />
-          <Skills title="HTML5" />
-          <Skills title="CSS3" />
-          <Skills title="Javascript" />
-          <Skills title="PHP" />
-        </div>
-        <div className="w-1/2">
-          <SiteTitle title="FrontEnd" />
-          <Skills title="HTML5" />
-          <Skills title="CSS3" />
-          <Skills title="Javascript" />
-          <Skills title="PHP" />
-        </div>
-        <div className="w-1/2">
-          <SiteTitle title="FrontEnd" />
-          <Skills title="HTML5" />
-          <Skills title="CSS3" />
-          <Skills title="Javascript" />
-          <Skills title="PHP" />
-        </div>
-        <div className="w-1/2">
-          <SiteTitle title="FrontEnd" />
-          <Skills title="HTML5" />
-          <Skills title="CSS3" />
-          <Skills title="Javascript" />
-          <Skills title="PHP" />
-        </div>
+        {about.skills.map((item, index) => {
+          return (
+            <div key={index} className="w-1/2 mb-5">
+              <SiteTitle title={item.skillTitle} />
 
-        <div className="w-1/2">
-          <SiteTitle title="FrontEnd" />
-          <Skills title="HTML5" />
-          <Skills title="CSS3" />
-          <Skills title="Javascript" />
-          <Skills title="PHP" />
-        </div>
+              {item.skillNameGroup.map((skill, index) => (
+                <Skills key={index} title={skill.skillName} />
+              ))}
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );
 };
 
 export default About;
+
+export const getStaticProps = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query Pages {
+        page(id: "21", idType: DATABASE_ID) {
+          title
+          content
+          about {
+            aboutHeading
+            skills {
+              skillTitle
+              skillNameGroup {
+                skillName
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      aboutPage: data?.page,
+    },
+  };
+};

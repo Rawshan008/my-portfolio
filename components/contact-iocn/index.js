@@ -25,7 +25,7 @@ const ContactIcon = (props) => {
 
       {mail && (
         <a
-          href={mail}
+          href={`mailto:${mail}`}
           className="h-10 w-10 bg-base-color flex items-center justify-center rounded-full transition-all duration-300 hover:bg-body-color mr-3"
         >
           <Mail width="20" height="20" fill="#ffffff" />
