@@ -17,8 +17,13 @@ module.exports = {
       colors: {
         "base-color": "#c66",
         "base-hover": "#ffffff1a",
+        "menu-border": "#0000001a",
+        "body-color": "#444444",
+      },
+      fontFamily: {
+        dosis: ["Dosis", "sans-serif"],
+        bitter: ["Bitter", "serif"],
       },
     },
   },
-  plugins: [],
 };
