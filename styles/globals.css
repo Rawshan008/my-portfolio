@@ -26,8 +26,20 @@ a {
   box-sizing: border-box;
 }
 
+.img-wrapper > div {
+  height: 100%;
+}
+
 @layer components {
   .home-description > p {
     @apply font-normal font-bitter text-xl text-body-color tracking-wide leading-8;
+  }
+
+  .portfolio-description > p {
+    @apply font-normal font-bitter text-lg text-body-color tracking-wide leading-8 mb-5;
+  }
+
+  .portfolio-description > h3 {
+    @apply font-bold font-bitter text-xl text-body-color mb-3;
   }
 }

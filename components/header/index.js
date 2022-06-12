@@ -41,7 +41,7 @@ const Header = () => {
 
             <div
               className={
-                "fixed w-96 left-1/2 -translate-x-2/4 transition-all duration-500 bg-base-color rounded-sm " +
+                "fixed z-50 w-96 left-1/2 -translate-x-2/4 transition-all duration-500 bg-base-color rounded-sm " +
                 (menuOpen ? "top-0" : "-top-full")
               }
             >
